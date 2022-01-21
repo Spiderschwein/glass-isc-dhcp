@@ -26,9 +26,6 @@ RUN npm install
 # copy the remainder of src
 COPY . .
 
-# Create empty dhcpd.conf file to prevent crashes if no dhcpd.conf is mounted
-RUN mkdir /etc/dhcp && touch /etc/dhcp/dhcpd.conf
-
 # Create Entrypoint for config generation
 ENTRYPOINT [ "sh", "entrypoint.sh" ]
 CMD npm start
