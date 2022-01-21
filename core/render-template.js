@@ -4,6 +4,10 @@
 
 var fs = require('fs');
 
+/* Read Config */
+var json_file = require('jsonfile');
+var glass_config = json_file.readFileSync('config/glass_config.json');
+
 module.exports = {
     get_index_template: function (body_content, request_url) {
         if (typeof request_url !== "undefined" && request_url.includes("v_ajax")) {
@@ -13,6 +17,7 @@ module.exports = {
             core = fs.readFileSync('./public/templates/index.html', 'utf8');
             core = core.replace(/\[application_name\]/, 'Glass | ISC DHCP Server Interface');
             core = core.replace(/\[body_content\]/, body_content);
+            core = core.replace(/\[base_url\]/, glass_config.base_url)
             // core = core.replace(/\[(.*?)\]/, "");
             return core;
         }
