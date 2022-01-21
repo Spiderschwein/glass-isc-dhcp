@@ -51,7 +51,7 @@ get_mac_oui_data();
 function get_mac_oui_data() {
 	if(typeof mac_oui_data === "undefined") {
 		mac_oui_data = {};
-        $.getJSON("/api/get_mac_oui_list", function (data) {
+        $.getJSON("api/get_mac_oui_list", function (data) {
             mac_oui_data = data;
         });
     }

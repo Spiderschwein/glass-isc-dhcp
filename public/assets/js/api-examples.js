@@ -8,7 +8,7 @@ function api_example(example) {
 	switch(example) {
 		default:
             $("#" + example).html(loader_html);
-            $.getJSON( "/api/" + example, function( data ) {
+            $.getJSON( "api/" + example, function( data ) {
                 var request_time = (new Date().getTime() - start_time) / 1000;
                 $("#" + example).html('Server Response Time: ' + request_time + 'ms <pre style="margin-top:20px">' + JSON.stringify(data, null, 2) + '</pre>');
             });

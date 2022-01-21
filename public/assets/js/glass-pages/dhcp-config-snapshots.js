@@ -1,5 +1,5 @@
 function view_snapshot(snapshot) {
-	$.post( "/dhcp_config_snapshot_view", "snapshot=" + encodeURIComponent(snapshot), function( data ) {
+	$.post( "dhcp_config_snapshot_view", "snapshot=" + encodeURIComponent(snapshot), function( data ) {
 
 		$('#snapshot_grid').fadeOut(100).fadeIn(100);
 		$('#snapshot_name').html("Snapshot '" + snapshot + "'");

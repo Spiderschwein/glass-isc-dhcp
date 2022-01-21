@@ -27,7 +27,7 @@ function websockets_unsubscribe_all_events(){
 }
 
 function connect_websocket() {
-	$.getJSON("/api/get_websocket_config", function (data) {
+	$.getJSON("api/get_websocket_config", function (data) {
 
 		var websocket_port = data.ws_port;
 

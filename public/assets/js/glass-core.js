@@ -154,7 +154,7 @@ function get_form_query_string(form_id) {
 function save_config() {
     glass_settings = get_form_query_string("glass-settings-form");
 
-    $.post("/glass_settings_save", glass_settings, function (data) {
+    $.post("glass_settings_save", glass_settings, function (data) {
         $("#glass_settings_result").html(data);
     });
 }
@@ -218,7 +218,7 @@ $(document).on("click", ".option_data", function () {
 $(document).on("keypress", "#lease_search_criteria", function (e) {
     if (e.which == 13) {
         $('#search_result').html(loader_html);
-        $.post("/dhcp_lease_search", {search: $("#lease_search_criteria").val()}, function (result) {
+        $.post("dhcp_lease_search", {search: $("#lease_search_criteria").val()}, function (result) {
             $("#search_result").html(result);
 
             if (typeof display_leases !== "undefined")
