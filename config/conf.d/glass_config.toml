@@ -1,0 +1,9 @@
+[template]
+src = "glass_config.json.tmpl"
+dest = "/home/node/app/config/glass_config.json"
+keys = [
+    "/admin/user",
+    "/admin/password",
+    "/ws/port",
+    "/base/url"
+]
